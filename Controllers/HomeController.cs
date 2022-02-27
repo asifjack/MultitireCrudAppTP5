@@ -7,13 +7,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using CommonLayer.Models;
 
 namespace MultitireCrudAppTP5.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private BLEmployeeBussiness bussiness = new BLEmployeeBussiness();
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -22,10 +22,10 @@ namespace MultitireCrudAppTP5.Controllers
 
         public IActionResult Index()
         {
-            var emp = bussiness.GetEmployees();
-            return View(emp);
+            return View();
         }
-
+        
+        
         public IActionResult Privacy()
         {
             return View();
